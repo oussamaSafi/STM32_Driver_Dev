@@ -1,21 +1,14 @@
-22:53:42 **** Incremental Build of configuration Debug for project 1_led_toggle_addr_struct ****
+22:16:54 **** Incremental Build of configuration Debug for project 2_GPIO_Driver ****
 make -j16 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "1_led_toggle_addr_struct.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\MSI\Documents\STM32-BluePill-BareMetal-Comm-drivers\1_led_toggle_addr_struct\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1_led_toggle_addr_struct.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 1_led_toggle_addr_struct.elf
- 
-arm-none-eabi-size  1_led_toggle_addr_struct.elf 
-arm-none-eabi-objdump -h -S 1_led_toggle_addr_struct.elf  > "1_led_toggle_addr_struct.list"
+arm-none-eabi-size  2_GPIO_Driver.elf 
    text	   data	    bss	    dec	    hex	filename
-    668	      0	   1568	   2236	    8bc	1_led_toggle_addr_struct.elf
+    700	      0	   1568	   2268	    8dc	2_GPIO_Driver.elf
 Finished building: default.size.stdout
  
-Finished building: 1_led_toggle_addr_struct.list
- 
-22:53:46 **** Incremental Build of configuration Debug for project 1_led_toggle_addr_struct ****
+22:17:12 **** Incremental Build of configuration Debug for project 2_GPIO_Driver ****
 make -j16 all 
-arm-none-eabi-size  1_led_toggle_addr_struct.elf 
+arm-none-eabi-size  2_GPIO_Driver.elf 
    text	   data	    bss	    dec	    hex	filename
-    668	      0	   1568	   2236	    8bc	1_led_toggle_addr_struct.elf
+    700	      0	   1568	   2268	    8dc	2_GPIO_Driver.elf
 Finished building: default.size.stdout
  
