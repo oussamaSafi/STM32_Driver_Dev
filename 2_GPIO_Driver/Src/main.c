@@ -5,6 +5,10 @@
 #define PIN13					(1<<13)
 #define LED_PIN					PIN13
 
+
+#define PIN14					(1<<14)
+#define BTN_PIN					PIN14
+
 int main(void){
 	RCC->APB2ENR |= IOPCEN;
 
@@ -16,15 +20,22 @@ int main(void){
 	GPIOC->CRH |= (1<<22);
 	GPIOC->CRH &= ~(1<<23);
 
+	// Set PC14 as input
+	GPIOC->CRH &= ~(1<<24);
+	GPIOC->CRH &= ~(1<<25);
+
+	// Set PC14 as input with pull-up / pull-down
+	GPIOC->CRH &= ~(1<<26);
+	GPIOC->CRH |= (1<<27);
+
 	while(1){
-		// Set PC13 High
-		GPIOC->BSRR |= LED_PIN;
-		for (volatile int i = 0; i < 500000; i++) {
-
+		if(GPIOC->IDR & BTN_PIN){
+			// Set PC13 High
+			GPIOC->BSRR = LED_PIN;
 		}
-		GPIOC->BSRR |= (1<<29);
-		for (volatile int i = 0; i < 500000; i++) {
-
+		else{
+			// Set PC13 LOW
+			GPIOC->BSRR = (1<<29);
 		}
 	}
 }
